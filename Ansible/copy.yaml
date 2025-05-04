@@ -1,0 +1,13 @@
+---
+- name: Copy file from local to remote clients
+  hosts: all
+
+  tasks:
+  - name: Copying files
+    become: true
+    copy:
+      src: /home/alek/copy.txt
+      dest: /tmp
+      owner: root
+      group: root
+      mode: 0644
