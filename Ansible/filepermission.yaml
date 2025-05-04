@@ -1,0 +1,9 @@
+---
+- name: Change file permission
+  hosts: all
+
+  tasks:
+  - name: File Permissions
+    file:
+     path: /home/client/linux2
+     mode: a+w
