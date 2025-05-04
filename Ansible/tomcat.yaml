@@ -1,0 +1,20 @@
+---
+- name: Create directory and Download Tomcat from URL
+  hosts: localhost
+
+  tasks:
+  - name: Create directory
+    file:
+     path: /opt/tomcat
+     state: directory
+     mode: 0755
+     owner: root
+     group: root
+   
+  - name: Downloa Tomcat from url
+    get_url:
+      url: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.104/bin/apache-tomcat-9.0.104.tar.gz
+      dest: /opt/tomcat
+      mode: 0755
+      owner: alek
+      group: alek
